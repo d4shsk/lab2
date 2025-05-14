@@ -6,3 +6,22 @@
 Внутри функции int main(void) { /*...*/ } определите указатель double ***pointer = NULL;. Инициализируйте этот указатель адресом другого указателя типа double **, который указывает на переменную
 double *, которая указывает на double. Используйте pointer для записи и чтения значения 2.0 в сегмент
 оперативной памяти для double.
+### Математическая модель
+???  
+### Список идентификаторов
+| Имя  | Тип | Смысл |
+| --- | --- | --- |
+| pointer  | double***  |  указатель |
+| pp  | double**  |  указатель |
+  
+### Код программы
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    double*** pointer = NULL; double** pp = malloc(sizeof(double*)); *pp = malloc(sizeof(double)); **pp = 2.0; pointer = &pp; printf("%f\n", ***pointer); free(*pp); free(pp);
+}
+```
+### Результат выполненной работы  
+<img src="imgs/1.jpg">  
