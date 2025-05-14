@@ -135,3 +135,49 @@ int main() {
 ```
 ### Результат выполненной работы  
 <img src="imgs/4.jpg">  
+
+## 5.  
+### Задача  
+Обратный порядок элементов массива:
+Выведите элементы динамического массива целых чисел в обратном порядке, используя указатель и операцию
+декремента (--).  
+### Математическая модель
+???  
+### Список идентификаторов
+| Имя  | Тип | Смысл |
+| --- | --- | --- |
+| size  | int  |  размер массива |
+| array  | int*  | динамический массив |
+| ptr  | int*  |  указатель на элемент массива |  
+  
+### Код программы
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int size;
+    int* array;
+
+    printf("Enter array size: ");
+    scanf("%d", &size);
+
+    array = (int*)malloc(size * sizeof(int));
+    printf("Enter %d elements:\n", size);
+    for (int* ptr = array; ptr < array + size; ptr++) {
+        scanf("%d", ptr);
+    }
+
+    printf("Reversed array:\n");
+    for (int* ptr = array + size - 1; ptr >= array; ptr--) {
+        printf("%d ", *ptr);
+    }
+    printf("\n");
+    free(array);
+
+    return 0;
+}
+```
+### Результат выполненной работы  
+<img src="imgs/5.jpg"> 
+
