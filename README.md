@@ -91,3 +91,47 @@ int main() {
 ```
 ### Результат выполненной работы  
 <img src="imgs/3.jpg">  
+
+## 4.  
+### Задача  
+Динамический массив с плавающей точкой:
+Напишите программу, которая создаёт одномерный динамический массив из чисел с плавающей точкой двойной точности, заполняет его значениями с клавиатуры и распечатывает все элементы этого массива, используя
+арифметику указателей (оператор +), а не оператор доступа к элементу массива []  
+### Математическая модель
+???  
+### Список идентификаторов
+| Имя  | Тип | Смысл |
+| --- | --- | --- |
+| size  | int  |  размер массива |
+| array  | double*  | динамический массив |
+| ptr  | double*  |  указатель на элемент массива |
+  
+### Код программы
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int size;
+    double* array;
+
+    printf("Enter array size: ");
+    scanf("%d", &size);
+
+    array = (double*)malloc(size * sizeof(double));
+    printf("Enter %d elements:\n", size);
+    for (double* ptr = array; ptr < array + size; ptr++) {
+        scanf("%lf", ptr);
+    }
+    printf("Elements:\n");
+    for (double* ptr = array; ptr < array + size; ptr++) {
+        printf("%.2f ", *ptr);
+    }
+    printf("\n");
+    free(array);
+
+    return 0;
+}
+```
+### Результат выполненной работы  
+<img src="imgs/4.jpg">  
